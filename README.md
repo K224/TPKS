@@ -9,9 +9,9 @@ TPKS
 Арслан (avitella) -  
 Саня (elshiko) -  
 Макс -  
-Дима -  
+Дима (axelhz) -  
 Север -  
-Ваня -  
+Ваня (Semen-kisliy) -  
 
 Заходим в Issue #1 и выбираем роль.  
 https://github.com/K224/TPKS/issues/1
