@@ -8,7 +8,7 @@ TPKS
 Женя (janmak) -  
 Арслан (avitella) -  
 Саня (elshiko) -  
-Макс -  
+Макс (duran-duran) - аналитика и тестирование  
 Дима (axelhz) -  
 Север -  
 Ваня (Semen-kisliy) -  
