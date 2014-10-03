@@ -1,0 +1,15 @@
+title Поиск мероприятия
+
+Browser->Server: GET /parties
+Server->+PartiesController: index()
+PartiesController->PartiesController: render view
+PartiesController-->-Browser: HTML View
+note left of Browser: Выбор зоны на карте
+Browser->Server: GET /parties/get_parties_in_zone?zone
+Server->+PartiesController: get_parties_in_zone()
+note right of Server: params[:zone]
+PartiesController->Party(Model): get_parties_in_zone(zone)
+Party(Model)->DB: SELECT
+DB-->+Party(Model): Данные о мероприятиях
+Party(Model)-->PartiesController:Массив мероприятий
+PartiesController-->Browser: JSON данные
