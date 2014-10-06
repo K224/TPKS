@@ -1,0 +1,18 @@
+title Создание мероприятия
+
+Browser->Server: GET /parties/new
+Server->+PartiesController:new()
+PartiesController->PartiesController:render view
+PartiesController->-Browser:HTML View
+
+note left of Browser:Заполнение формы
+
+Browser->Server: POST /parties
+Server->+PartiesController:create()
+PartiesController->+User(Model):create_party()
+User(Model)->Party(Model):create()
+Party(Model)->DB:INSERT
+DB-->+Party(Model):id
+Party(Model)-->User(Model):party_id
+User(Model)-->PartiesController:party_id
+PartiesController->-Browser: Redirect /parties/party_id
