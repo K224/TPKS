@@ -1,0 +1,19 @@
+title Подача заявки на участие в мероприятии
+
+Browser->Server: GET /parties/party_id
+Server->+PartiesController:show()
+PartiesController->PartiesController:render view
+PartiesController->-Browser:HTML View
+
+note left of Browser:Кнопка "Участвовать"
+
+Browser->Server: GET /parties/party_id/participate?a=participate
+Server->+PartiesController:participate()
+note left of PartiesController:params[:a]='participate'
+PartiesController->Party:find(params[:id])
+Party->DB:SELECT
+DB-->+Party:
+Party-->PartiesController:party object
+PartiesController->Party:guests.create(user: current_user, accepted: false)
+party.guests
+PartiesController->-Browser: Redirect /parties/party_id
