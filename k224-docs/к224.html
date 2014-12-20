@@ -1,0 +1,2517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:date="http://exslt.org/dates-and-times">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+              This file is generated from xml source: DO NOT EDIT
+      -->
+    <title> - Planner</title>
+    <meta name="GENERATOR" content="Planner HTML output" />
+    <style type="text/css">
+
+/* CSS Stylesheet for Planner HTML output.
+ * 
+ * Copyright (C) 2004-2005 Imendio AB
+ * Copyright (C) 2003 CodeFactory AB
+ * Copyright (C) 2003 Daniel Lundin (daniel@edgewall.com)
+ * Copyright (C) 2004 Chris Ladd (caladd@particlestorm.net)
+ */
+
+/*
+ * Fonts 
+ */
+html,body,table { 
+ font-family: "Bitstream Vera Sans", helvetica, Arial, sans-serif;
+ font-size: 12px;
+ white-space: nowrap;
+}
+
+tr,td,th,table,font,span,div,h1,h2,h3 {
+ font-family: "Bitstream Vera Sans", helvetica, Arial, sans-serif;
+}
+
+h1 {
+ font-size: 16px;
+}
+
+h2 {
+ font-size: 12px;
+ margin-bottom: 2px;
+}
+
+div.separator {
+ margin: 1em;
+}
+
+/*
+ * Header
+ */
+table.proj-header {
+ border: 0;
+ margin: 0;
+ width: auto;
+}
+
+table.proj-header .header {
+ font-weight: bold;
+}
+
+/*
+ * Footer
+ */
+.footer {
+ float: left;
+ width: 100%;
+ margin-top: 50px;  
+ padding-top: 2px;
+ border-style: dotted;
+ border-width: 1px 0 0 0;
+ border-color: #999;
+ font-size: 9px;
+ text-align: right;
+ clear: both;
+ color: #666;
+}
+
+a:link, a:visited {
+ text-decoration: none;
+ color: #666;
+}
+
+a:hover[href] {
+ text-decoration: underline;
+}
+
+
+/*
+ * Layout
+ */
+
+.gantt, .gantt-tasklist, .gantt-chart, .tasklist, .resourcelist {
+ float: left;
+}
+
+.gantt-tasklist, .gantt-chart, .tasklist-table, .resourcelist-table {
+ border-style: solid;
+ border-width: 1px;
+ border-color: #aaa;
+}
+
+.gantt-tasklist, .gantt-chart, .tasklist, .resourcelist {
+ overflow: auto;
+}
+
+.gantt, .tasklist, .resourcelist {
+  clear: both;
+  width: 100%;
+}
+
+.gantt-tasklist {
+ border-width: 1px 0px 1px 1px;
+ width: 30%;
+}
+
+.gantt-chart {
+ border-color: #aaa #aaa #aaa #fff;
+ width: 69.5%;
+}
+
+.tasklist, .resourcelist {
+ clear: left;
+}
+
+table {
+ width: 100%;
+ border-collapse: collapse;
+ border-style: none;
+ border-color: #fff;
+ white-space: nowrap;
+ margin: 0;
+}
+
+tr, td, th {
+ white-space: nowrap;
+ vertical-align: top;
+ padding-top: 1px;
+ padding-bottom: 1px;
+}
+
+th {
+ vertical-align: top;
+}
+
+tr {
+ height: 1.5em;
+}
+
+tr.header {
+ background-color: #aaa;
+ color: #fff;
+}
+
+tr.even {
+ background-color: #eee;
+}
+
+tr.odd {
+ background-color: #fff;
+}
+
+th span, td span {
+ margin-left: 6px;
+ margin-right: 6px;
+}
+
+th.note {
+ min-width: 20em;
+}
+
+td.note {
+ white-space: normal;
+}
+
+/*
+ * Gantt
+ */
+div.gantt-empty-begin, div.gantt-empty-end, div.gantt-complete-done, div.gantt-complete-notdone, div.gantt-summary {
+ overflow: hidden;
+ clear: none;
+ float: left; 
+ height: 0.75em;
+ margin-top: 0.15em;
+ margin-bottom: 0;
+}
+
+div.gantt-complete-done {
+ background-color: #495f6b;
+ height: 0.75em;
+ margin-top: 0;
+ margin-bottom: 0;
+}
+
+div.gantt-complete-notdone {
+ background-color: #8db6cd;
+ border-style: solid;
+ border-width: 1px;
+}
+
+div.gantt-summary {
+ height: 0.3em;
+ margin-top: 0.25em;
+ border-bottom: 2px dashed #000;
+}
+
+div.gantt-empty-end {
+ margin-left: 0;
+}
+
+div.gantt-milestone {
+ float: left;
+ font-size: 0.9em;
+ color: #000000;
+ position: relative;
+ margin-left: 0;
+ margin-right: 0;
+}
+
+div.gantt-resources {
+ float: left;
+ margin-left: 0.5em;
+ white-space: nowrap;
+}
+
+th.gantt-1day-header {
+  width: 19px;
+}
+
+th.gantt-2day-header {
+  width: 39px;
+}
+
+th.gantt-3day-header {
+  width: 59px;
+}
+
+th.gantt-4day-header {
+  width: 79px;
+}
+
+th.gantt-5day-header {
+  width: 99px;
+}
+
+th.gantt-6day-header {
+  width: 119px;
+}
+
+th.gantt-week-header, .gantt-resources {
+ width: 139px;
+}
+
+th.gantt-day-header {
+ margin: 0;
+ padding-top: 1px;
+ padding-bottom: 1px;
+ width: 19px;
+}
+
+</style>
+<!--[if IE]><style type="text/css">
+
+/* IE specific overrides to compensate for the different box model used by IE
+ * (see http://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug)
+ */
+
+.gantt-resources {
+  overflow: hidden;
+}
+
+
+.tasklist, .resourcelist {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 1em;
+}
+
+
+.gantt-tasklist, .gantt-chart {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+.gantt-chart {
+  padding-bottom: 1px;
+}
+
+
+
+.tasklist-table, .resourcelist-table {
+  width: 99.8%;
+}
+
+/*
+div.gantt-empty-begin, div.gantt-empty-end, div.gantt-complete-done, div.gantt-complete-notdone, div.gantt-summary {
+ height: 1.75em;
+}
+
+div.gantt-complete-done {
+ height: 0.75em;
+}
+
+div.gantt-summary {
+ height: 0.3em;
+}
+*/
+th.gantt-1day-header {
+  width: 20px;
+}
+
+th.gantt-2day-header {
+  width: 40px;
+}
+
+th.gantt-3day-header {
+  width: 60px;
+}
+
+th.gantt-4day-header {
+  width: 80px;
+}
+
+th.gantt-5day-header {
+  width: 100px;
+}
+
+th.gantt-6day-header {
+  width: 120px;
+}
+
+th.gantt-week-header {
+ width: 140px;
+}
+
+th.gantt-day-header {
+ width: 20px;
+}
+
+</style><![endif]-->
+<!--[if gte IE 7]><style type="text/css">
+
+.gantt-chart {
+  padding-bottom: 0px;
+}
+
+</style><![endif]-->
+  </head>
+  <body>
+    <h1 class="proj-title">
+      <a name="project" id="project">Безымянный проект</a>
+    </h1>
+    <table class="proj-header">
+      <tr>
+        <td class="header">Начало:</td>
+        <td>Сентябрь 6, 2014</td>
+      </tr>
+      <tr>
+        <td class="header">Завершение:</td>
+        <td>Декабрь 21, 2014</td>
+      </tr>
+      <tr>
+        <td class="header">Дата отчёта:</td>
+        <td>Декабрь 20, 2014</td>
+      </tr>
+    </table>
+    <div class="separator"></div>
+    <div class="gantt">
+      <h2>
+        <a name="gantt" id="gantt">Диаграмма Ганта</a>
+      </h2>
+      <div class="gantt-tasklist">
+        <table cellspacing="0" cellpadding="0" border="1">
+          <tr class="header" align="left">
+            <th>
+              <span>WBS</span>
+            </th>
+            <th>
+              <span>Название</span>
+            </th>
+            <th>
+              <span>Работа</span>
+            </th>
+          </tr>
+          <tr class="header">
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1</span>
+            </td>
+            <td>
+              <a name="gantt-1" style="white-space: nowrap; margin-left: 0px;" id="gantt-1">
+                <span>Концепция</span>
+              </a>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>2</span>
+            </td>
+            <td>
+              <a name="gantt-2" style="white-space: nowrap; margin-left: 0px;" id="gantt-2">
+                <span>Проектный план</span>
+              </a>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>3</span>
+            </td>
+            <td>
+              <a name="gantt-3" style="white-space: nowrap; margin-left: 0px;" id="gantt-3">
+                <span>Составление ТЗ</span>
+              </a>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>4</span>
+            </td>
+            <td>
+              <a name="gantt-4" style="white-space: nowrap; margin-left: 0px;" id="gantt-4">
+                <span>Архитектура</span>
+              </a>
+            </td>
+            <td>
+              <span>44d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>5</span>
+            </td>
+            <td>
+              <a name="gantt-5" style="white-space: nowrap; margin-left: 0px;" id="gantt-5">
+                <span>Составление детализированного проектного плана</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>6</span>
+            </td>
+            <td>
+              <a name="gantt-6" style="white-space: nowrap; margin-left: 0px;" id="gantt-6">
+                <span>Доработка проектного плана</span>
+              </a>
+            </td>
+            <td>
+              <span>206d 6h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>7</span>
+            </td>
+            <td>
+              <a name="gantt-7" style="white-space: nowrap; margin-left: 0px;" id="gantt-7">
+                <span>Доработка ТЗ</span>
+              </a>
+            </td>
+            <td>
+              <span>227d 6h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>8</span>
+            </td>
+            <td>
+              <a name="gantt-8" style="white-space: nowrap; margin-left: 0px;" id="gantt-8">
+                <span>Подготовка среды для разработки и инструкций</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>9</span>
+            </td>
+            <td>
+              <a name="gantt-9" style="white-space: nowrap; margin-left: 0px;" id="gantt-9">
+                <span>Инфраструктура, хостинг Heroku</span>
+              </a>
+            </td>
+            <td>
+              <span>227d 6h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>10</span>
+            </td>
+            <td>
+              <a name="gantt-10" style="white-space: nowrap; margin-left: 0px;" id="gantt-10">
+                <span>Составление тест-требований</span>
+              </a>
+            </td>
+            <td>
+              <span>227d 6h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>11</span>
+            </td>
+            <td>
+              <a name="gantt-11" style="white-space: nowrap; margin-left: 0px;" id="gantt-11">
+                <span>Составление тест-кейсов</span>
+              </a>
+            </td>
+            <td>
+              <span>197d 6h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>12</span>
+            </td>
+            <td>
+              <a name="gantt-12" style="white-space: nowrap; margin-left: 0px;" id="gantt-12">
+                <span>Тестирование</span>
+              </a>
+            </td>
+            <td>
+              <span>179d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>13</span>
+            </td>
+            <td>
+              <a name="gantt-13" style="white-space: nowrap; margin-left: 0px;" id="gantt-13">
+                <span>Написание автоматических тестов</span>
+              </a>
+            </td>
+            <td>
+              <span>104d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>14</span>
+            </td>
+            <td>
+              <a name="gantt-14" style="white-space: nowrap; margin-left: 0px;" id="gantt-14">
+                <span>Оформление резултатов тестирования</span>
+              </a>
+            </td>
+            <td>
+              <span>38d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>15</span>
+            </td>
+            <td>
+              <a name="gantt-15" style="white-space: nowrap; margin-left: 0px;" id="gantt-15">
+                <span>Макет дизайна</span>
+              </a>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>16</span>
+            </td>
+            <td>
+              <a name="gantt-16" style="white-space: nowrap; margin-left: 0px;" id="gantt-16">
+                <span>Переработка дизайна</span>
+              </a>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>17</span>
+            </td>
+            <td>
+              <a name="gantt-17" style="white-space: nowrap; margin-left: 0px;" id="gantt-17">
+                <span>Верстка главной страницы</span>
+              </a>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>18</span>
+            </td>
+            <td>
+              <a name="gantt-18" style="white-space: nowrap; margin-left: 0px;" id="gantt-18">
+                <span>Верстка страницы поиска</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>19</span>
+            </td>
+            <td>
+              <a name="gantt-19" style="white-space: nowrap; margin-left: 0px;" id="gantt-19">
+                <span>Верстка страниц профилей</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>20</span>
+            </td>
+            <td>
+              <a name="gantt-20" style="white-space: nowrap; margin-left: 0px;" id="gantt-20">
+                <span>Верстка страниц вечеринок</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>21</span>
+            </td>
+            <td>
+              <a name="gantt-21" style="white-space: nowrap; margin-left: 0px;" id="gantt-21">
+                <span>Верстка страниц регистрации и входа</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>22</span>
+            </td>
+            <td>
+              <a name="gantt-22" style="white-space: nowrap; margin-left: 0px;" id="gantt-22">
+                <span>Доработка верстки</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>23</span>
+            </td>
+            <td>
+              <a name="gantt-23" style="white-space: nowrap; margin-left: 0px;" id="gantt-23">
+                <span>Создание основных моделей</span>
+              </a>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>24</span>
+            </td>
+            <td>
+              <a name="gantt-24" style="white-space: nowrap; margin-left: 0px;" id="gantt-24">
+                <span>Главная страница и страница поиска</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>25</span>
+            </td>
+            <td>
+              <a name="gantt-25" style="white-space: nowrap; margin-left: 0px;" id="gantt-25">
+                <span>Панель администратора</span>
+              </a>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>26</span>
+            </td>
+            <td>
+              <a name="gantt-26" style="white-space: nowrap; margin-left: 0px;" id="gantt-26">
+                <span>Пользователи</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>27</span>
+            </td>
+            <td>
+              <a name="gantt-27" style="white-space: nowrap; margin-left: 0px;" id="gantt-27">
+                <span>Страницы профиля</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>28</span>
+            </td>
+            <td>
+              <a name="gantt-28" style="white-space: nowrap; margin-left: 0px;" id="gantt-28">
+                <span>Страницы вечеринок</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>29</span>
+            </td>
+            <td>
+              <a name="gantt-29" style="white-space: nowrap; margin-left: 0px;" id="gantt-29">
+                <span>Интерактивная карта</span>
+              </a>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>30</span>
+            </td>
+            <td>
+              <a name="gantt-30" style="white-space: nowrap; margin-left: 0px;" id="gantt-30">
+                <span>Аватарки</span>
+              </a>
+            </td>
+            <td>
+              <span>89d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>31</span>
+            </td>
+            <td>
+              <a name="gantt-31" style="white-space: nowrap; margin-left: 0px;" id="gantt-31">
+                <span>Многофункциональный редактор</span>
+              </a>
+            </td>
+            <td>
+              <span>119d 7h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>32</span>
+            </td>
+            <td>
+              <a name="gantt-32" style="white-space: nowrap; margin-left: 0px;" id="gantt-32">
+                <span>Редиректы</span>
+              </a>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>33</span>
+            </td>
+            <td>
+              <a name="gantt-33" style="white-space: nowrap; margin-left: 0px;" id="gantt-33">
+                <span>Исправление багов</span>
+              </a>
+            </td>
+            <td>
+              <span>44d 7h </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="gantt-chart">
+        <table cellspacing="0" cellpadding="0" border="1" style="table-layout: fixed;">
+          <tr class="header" align="left">
+            <th class="gantt-2day-header" colspan="2"></th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 37, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 38, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 39, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 40, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 41, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 42, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 43, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 44, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 45, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 46, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 47, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 48, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 49, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 50, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Неделя 51, 2014</th>
+            <th class="gantt-6day-header" colspan="6"></th>
+            <th></th>
+          </tr>
+          <tr class="header" align="left">
+            <th class="gantt-day-header" align="center">6</th>
+            <th class="gantt-day-header" align="center">7</th>
+            <th class="gantt-day-header" align="center">8</th>
+            <th class="gantt-day-header" align="center">9</th>
+            <th class="gantt-day-header" align="center">10</th>
+            <th class="gantt-day-header" align="center">11</th>
+            <th class="gantt-day-header" align="center">12</th>
+            <th class="gantt-day-header" align="center">13</th>
+            <th class="gantt-day-header" align="center">14</th>
+            <th class="gantt-day-header" align="center">15</th>
+            <th class="gantt-day-header" align="center">16</th>
+            <th class="gantt-day-header" align="center">17</th>
+            <th class="gantt-day-header" align="center">18</th>
+            <th class="gantt-day-header" align="center">19</th>
+            <th class="gantt-day-header" align="center">20</th>
+            <th class="gantt-day-header" align="center">21</th>
+            <th class="gantt-day-header" align="center">22</th>
+            <th class="gantt-day-header" align="center">23</th>
+            <th class="gantt-day-header" align="center">24</th>
+            <th class="gantt-day-header" align="center">25</th>
+            <th class="gantt-day-header" align="center">26</th>
+            <th class="gantt-day-header" align="center">27</th>
+            <th class="gantt-day-header" align="center">28</th>
+            <th class="gantt-day-header" align="center">29</th>
+            <th class="gantt-day-header" align="center">30</th>
+            <th class="gantt-day-header" align="center">1</th>
+            <th class="gantt-day-header" align="center">2</th>
+            <th class="gantt-day-header" align="center">3</th>
+            <th class="gantt-day-header" align="center">4</th>
+            <th class="gantt-day-header" align="center">5</th>
+            <th class="gantt-day-header" align="center">6</th>
+            <th class="gantt-day-header" align="center">7</th>
+            <th class="gantt-day-header" align="center">8</th>
+            <th class="gantt-day-header" align="center">9</th>
+            <th class="gantt-day-header" align="center">10</th>
+            <th class="gantt-day-header" align="center">11</th>
+            <th class="gantt-day-header" align="center">12</th>
+            <th class="gantt-day-header" align="center">13</th>
+            <th class="gantt-day-header" align="center">14</th>
+            <th class="gantt-day-header" align="center">15</th>
+            <th class="gantt-day-header" align="center">16</th>
+            <th class="gantt-day-header" align="center">17</th>
+            <th class="gantt-day-header" align="center">18</th>
+            <th class="gantt-day-header" align="center">19</th>
+            <th class="gantt-day-header" align="center">20</th>
+            <th class="gantt-day-header" align="center">21</th>
+            <th class="gantt-day-header" align="center">22</th>
+            <th class="gantt-day-header" align="center">23</th>
+            <th class="gantt-day-header" align="center">24</th>
+            <th class="gantt-day-header" align="center">25</th>
+            <th class="gantt-day-header" align="center">26</th>
+            <th class="gantt-day-header" align="center">27</th>
+            <th class="gantt-day-header" align="center">28</th>
+            <th class="gantt-day-header" align="center">29</th>
+            <th class="gantt-day-header" align="center">30</th>
+            <th class="gantt-day-header" align="center">31</th>
+            <th class="gantt-day-header" align="center">1</th>
+            <th class="gantt-day-header" align="center">2</th>
+            <th class="gantt-day-header" align="center">3</th>
+            <th class="gantt-day-header" align="center">4</th>
+            <th class="gantt-day-header" align="center">5</th>
+            <th class="gantt-day-header" align="center">6</th>
+            <th class="gantt-day-header" align="center">7</th>
+            <th class="gantt-day-header" align="center">8</th>
+            <th class="gantt-day-header" align="center">9</th>
+            <th class="gantt-day-header" align="center">10</th>
+            <th class="gantt-day-header" align="center">11</th>
+            <th class="gantt-day-header" align="center">12</th>
+            <th class="gantt-day-header" align="center">13</th>
+            <th class="gantt-day-header" align="center">14</th>
+            <th class="gantt-day-header" align="center">15</th>
+            <th class="gantt-day-header" align="center">16</th>
+            <th class="gantt-day-header" align="center">17</th>
+            <th class="gantt-day-header" align="center">18</th>
+            <th class="gantt-day-header" align="center">19</th>
+            <th class="gantt-day-header" align="center">20</th>
+            <th class="gantt-day-header" align="center">21</th>
+            <th class="gantt-day-header" align="center">22</th>
+            <th class="gantt-day-header" align="center">23</th>
+            <th class="gantt-day-header" align="center">24</th>
+            <th class="gantt-day-header" align="center">25</th>
+            <th class="gantt-day-header" align="center">26</th>
+            <th class="gantt-day-header" align="center">27</th>
+            <th class="gantt-day-header" align="center">28</th>
+            <th class="gantt-day-header" align="center">29</th>
+            <th class="gantt-day-header" align="center">30</th>
+            <th class="gantt-day-header" align="center">1</th>
+            <th class="gantt-day-header" align="center">2</th>
+            <th class="gantt-day-header" align="center">3</th>
+            <th class="gantt-day-header" align="center">4</th>
+            <th class="gantt-day-header" align="center">5</th>
+            <th class="gantt-day-header" align="center">6</th>
+            <th class="gantt-day-header" align="center">7</th>
+            <th class="gantt-day-header" align="center">8</th>
+            <th class="gantt-day-header" align="center">9</th>
+            <th class="gantt-day-header" align="center">10</th>
+            <th class="gantt-day-header" align="center">11</th>
+            <th class="gantt-day-header" align="center">12</th>
+            <th class="gantt-day-header" align="center">13</th>
+            <th class="gantt-day-header" align="center">14</th>
+            <th class="gantt-day-header" align="center">15</th>
+            <th class="gantt-day-header" align="center">16</th>
+            <th class="gantt-day-header" align="center">17</th>
+            <th class="gantt-day-header" align="center">18</th>
+            <th class="gantt-day-header" align="center">19</th>
+            <th class="gantt-day-header" align="center">20</th>
+            <th class="gantt-day-header" align="center">21</th>
+            <th class="gantt-day-header" align="center">22</th>
+            <th class="gantt-day-header" align="center">23</th>
+            <th class="gantt-day-header" align="center">24</th>
+            <th class="gantt-day-header" align="center">25</th>
+            <th class="gantt-day-header" align="center">26</th>
+            <th class="gantt-day-header" align="center">27</th>
+            <th align="center"></th>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 80px;"></div>
+                <div class="gantt-complete-notdone" style="width: 199px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[9], Быконя Денис[9], Северин Вервальд[9], Македонская Евгения[9], Петровская Анастасия[9], Таракчан Левон[9], Минаков Александр[9], Сиволоб Иван[9], Урташев Арслан[9], Смирнов Максим[9], Чекалин Дмитрий[9]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 220px;"></div>
+                <div class="gantt-complete-notdone" style="width: 99px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис, Чекалин Дмитрий</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 220px;"></div>
+                <div class="gantt-complete-notdone" style="width: 105px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[25], Северин Вервальд[40], Македонская Евгения, Петровская Анастасия[30], Смирнов Максим[60], Чекалин Дмитрий[10]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 220px;"></div>
+                <div class="gantt-complete-notdone" style="width: 199px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон, Минаков Александр[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 600px;"></div>
+                <div class="gantt-complete-notdone" style="width: 139px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 740px;"></div>
+                <div class="gantt-complete-notdone" style="width: 1379px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 600px;"></div>
+                <div class="gantt-complete-notdone" style="width: 921px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[10], Македонская Евгения, Петровская Анастасия[20], Смирнов Максим[15], Чекалин Дмитрий[20]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 600px;"></div>
+                <div class="gantt-complete-notdone" style="width: 139px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Сиволоб Иван</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 600px;"></div>
+                <div class="gantt-complete-notdone" style="width: 1085px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон[40], Сиволоб Иван</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 600px;"></div>
+                <div class="gantt-complete-notdone" style="width: 1519px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Петровская Анастасия</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 800px;"></div>
+                <div class="gantt-complete-notdone" style="width: 942px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Петровская Анастасия, Сиволоб Иван[40]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 900px;"></div>
+                <div class="gantt-complete-notdone" style="width: 799px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Петровская Анастасия, Сиволоб Иван[20], Смирнов Максим[10], Чекалин Дмитрий[20]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1160px;"></div>
+                <div class="gantt-complete-notdone" style="width: 699px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Урташев Арслан</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1860px;"></div>
+                <div class="gantt-complete-notdone" style="width: 259px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Петровская Анастасия</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 600px;"></div>
+                <div class="gantt-complete-notdone" style="width: 279px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Северин Вервальд</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 860px;"></div>
+                <div class="gantt-complete-notdone" style="width: 186px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Быконя Денис[20], Северин Вервальд, Смирнов Максим[30]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 880px;"></div>
+                <div class="gantt-complete-notdone" style="width: 155px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Быконя Денис, Северин Вервальд[30], Таракчан Левон[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1020px;"></div>
+                <div class="gantt-complete-notdone" style="width: 82px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Быконя Денис, Северин Вервальд[30], Таракчан Левон[40]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1140px;"></div>
+                <div class="gantt-complete-notdone" style="width: 82px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[30], Быконя Денис, Северин Вервальд[20], Таракчан Левон[20]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1280px;"></div>
+                <div class="gantt-complete-notdone" style="width: 87px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[10], Быконя Денис, Северин Вервальд[20], Таракчан Левон[30]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1380px;"></div>
+                <div class="gantt-complete-notdone" style="width: 107px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[20], Быконя Денис, Северин Вервальд[10]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1500px;"></div>
+                <div class="gantt-complete-notdone" style="width: 82px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[10], Быконя Денис, Северин Вервальд[20], Таракчан Левон[20], Смирнов Максим[20]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 600px;"></div>
+                <div class="gantt-complete-notdone" style="width: 279px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 880px;"></div>
+                <div class="gantt-complete-notdone" style="width: 139px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 880px;"></div>
+                <div class="gantt-complete-notdone" style="width: 111px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[80], Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 880px;"></div>
+                <div class="gantt-complete-notdone" style="width: 139px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1020px;"></div>
+                <div class="gantt-complete-notdone" style="width: 99px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис[40], Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1020px;"></div>
+                <div class="gantt-complete-notdone" style="width: 139px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1160px;"></div>
+                <div class="gantt-complete-notdone" style="width: 139px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1340px;"></div>
+                <div class="gantt-complete-notdone" style="width: 599px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Минаков Александр</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1100px;"></div>
+                <div class="gantt-complete-notdone" style="width: 799px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1580px;"></div>
+                <div class="gantt-complete-notdone" style="width: 199px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="114">
+              <div style="width: 2261px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 1780px;"></div>
+                <div class="gantt-complete-notdone" style="width: 149px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">Бодунков Денис, Таракчан Левон</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="tasklist">
+      <h2>
+        <a name="tasks" id="tasks">Задачи</a>
+      </h2>
+      <div class="tasklist-table">
+        <table cellspacing="0" cellpadding="0" border="1">
+          <tr class="header" align="left">
+            <th>
+              <span>WBS</span>
+            </th>
+            <th>
+              <span>Название</span>
+            </th>
+            <th>
+              <span>Начало</span>
+            </th>
+            <th>
+              <span>Завершение</span>
+            </th>
+            <th>
+              <span>Работа</span>
+            </th>
+            <th>
+              <span>Завершено</span>
+            </th>
+            <th>
+              <span>Стоимость</span>
+            </th>
+            <th>
+              <span>Назначить на</span>
+            </th>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1</span>
+            </td>
+            <td>
+              <a name="task1" style="margin-left: 0px" id="task1">
+                <span>Концепция</span>
+              </a>
+            </td>
+            <td>
+              <span>Sep 10</span>
+            </td>
+            <td>
+              <span>Sep 19</span>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[9], Быконя Денис[9], Северин Вервальд[9], Македонская Евгения[9], Петровская Анастасия[9], Таракчан Левон[9], Минаков Александр[9], Сиволоб Иван[9], Урташев Арслан[9], Смирнов Максим[9], Чекалин Дмитрий[9]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>2</span>
+            </td>
+            <td>
+              <a name="task2" style="margin-left: 0px" id="task2">
+                <span>Проектный план</span>
+              </a>
+            </td>
+            <td>
+              <span>Sep 17</span>
+            </td>
+            <td>
+              <span>Sep 21</span>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис, Чекалин Дмитрий</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>3</span>
+            </td>
+            <td>
+              <a name="task3" style="margin-left: 0px" id="task3">
+                <span>Составление ТЗ</span>
+              </a>
+            </td>
+            <td>
+              <span>Sep 17</span>
+            </td>
+            <td>
+              <span>Sep 22</span>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[25], Северин Вервальд[40], Македонская Евгения, Петровская Анастасия[30], Смирнов Максим[60], Чекалин Дмитрий[10]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>4</span>
+            </td>
+            <td>
+              <a name="task4" style="margin-left: 0px" id="task4">
+                <span>Архитектура</span>
+              </a>
+            </td>
+            <td>
+              <span>Sep 17</span>
+            </td>
+            <td>
+              <span>Sep 26</span>
+            </td>
+            <td>
+              <span>44d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон, Минаков Александр[50]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>5</span>
+            </td>
+            <td>
+              <a name="task5" style="margin-left: 0px" id="task5">
+                <span>Составление детализированного проектного плана</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 6</span>
+            </td>
+            <td>
+              <span>Oct 12</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>6</span>
+            </td>
+            <td>
+              <a name="task6" style="margin-left: 0px" id="task6">
+                <span>Доработка проектного плана</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 13</span>
+            </td>
+            <td>
+              <span>Dec 20</span>
+            </td>
+            <td>
+              <span>206d 6h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>7</span>
+            </td>
+            <td>
+              <a name="task7" style="margin-left: 0px" id="task7">
+                <span>Доработка ТЗ</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 6</span>
+            </td>
+            <td>
+              <span>Nov 21</span>
+            </td>
+            <td>
+              <span>227d 6h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[10], Македонская Евгения, Петровская Анастасия[20], Смирнов Максим[15], Чекалин Дмитрий[20]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>8</span>
+            </td>
+            <td>
+              <a name="task8" style="margin-left: 0px" id="task8">
+                <span>Подготовка среды для разработки и инструкций</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 6</span>
+            </td>
+            <td>
+              <span>Oct 12</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Сиволоб Иван</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>9</span>
+            </td>
+            <td>
+              <a name="task9" style="margin-left: 0px" id="task9">
+                <span>Инфраструктура, хостинг Heroku</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 6</span>
+            </td>
+            <td>
+              <span>Nov 29</span>
+            </td>
+            <td>
+              <span>227d 6h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон[40], Сиволоб Иван</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>10</span>
+            </td>
+            <td>
+              <a name="task10" style="margin-left: 0px" id="task10">
+                <span>Составление тест-требований</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 6</span>
+            </td>
+            <td>
+              <span>Dec 20</span>
+            </td>
+            <td>
+              <span>227d 6h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Петровская Анастасия</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>11</span>
+            </td>
+            <td>
+              <a name="task11" style="margin-left: 0px" id="task11">
+                <span>Составление тест-кейсов</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 16</span>
+            </td>
+            <td>
+              <span>Dec 2</span>
+            </td>
+            <td>
+              <span>197d 6h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Петровская Анастасия, Сиволоб Иван[40]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>12</span>
+            </td>
+            <td>
+              <a name="task12" style="margin-left: 0px" id="task12">
+                <span>Тестирование</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 21</span>
+            </td>
+            <td>
+              <span>Nov 29</span>
+            </td>
+            <td>
+              <span>179d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Петровская Анастасия, Сиволоб Иван[20], Смирнов Максим[10], Чекалин Дмитрий[20]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>13</span>
+            </td>
+            <td>
+              <a name="task13" style="margin-left: 0px" id="task13">
+                <span>Написание автоматических тестов</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 3</span>
+            </td>
+            <td>
+              <span>Dec 7</span>
+            </td>
+            <td>
+              <span>104d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Урташев Арслан</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>14</span>
+            </td>
+            <td>
+              <a name="task14" style="margin-left: 0px" id="task14">
+                <span>Оформление резултатов тестирования</span>
+              </a>
+            </td>
+            <td>
+              <span>Dec 8</span>
+            </td>
+            <td>
+              <span>Dec 20</span>
+            </td>
+            <td>
+              <span>38d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Петровская Анастасия</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>15</span>
+            </td>
+            <td>
+              <a name="task15" style="margin-left: 0px" id="task15">
+                <span>Макет дизайна</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 6</span>
+            </td>
+            <td>
+              <span>Oct 19</span>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Северин Вервальд</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>16</span>
+            </td>
+            <td>
+              <a name="task16" style="margin-left: 0px" id="task16">
+                <span>Переработка дизайна</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 19</span>
+            </td>
+            <td>
+              <span>Oct 28</span>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Быконя Денис[20], Северин Вервальд, Смирнов Максим[30]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>17</span>
+            </td>
+            <td>
+              <a name="task17" style="margin-left: 0px" id="task17">
+                <span>Верстка главной страницы</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 20</span>
+            </td>
+            <td>
+              <span>Oct 27</span>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Быконя Денис, Северин Вервальд[30], Таракчан Левон[50]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>18</span>
+            </td>
+            <td>
+              <a name="task18" style="margin-left: 0px" id="task18">
+                <span>Верстка страницы поиска</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 27</span>
+            </td>
+            <td>
+              <span>Oct 31</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Быконя Денис, Северин Вервальд[30], Таракчан Левон[40]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>19</span>
+            </td>
+            <td>
+              <a name="task19" style="margin-left: 0px" id="task19">
+                <span>Верстка страниц профилей</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 2</span>
+            </td>
+            <td>
+              <span>Nov 6</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[30], Быконя Денис, Северин Вервальд[20], Таракчан Левон[20]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>20</span>
+            </td>
+            <td>
+              <a name="task20" style="margin-left: 0px" id="task20">
+                <span>Верстка страниц вечеринок</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 9</span>
+            </td>
+            <td>
+              <span>Nov 13</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[10], Быконя Денис, Северин Вервальд[20], Таракчан Левон[30]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>21</span>
+            </td>
+            <td>
+              <a name="task21" style="margin-left: 0px" id="task21">
+                <span>Верстка страниц регистрации и входа</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 14</span>
+            </td>
+            <td>
+              <span>Nov 19</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[20], Быконя Денис, Северин Вервальд[10]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>22</span>
+            </td>
+            <td>
+              <a name="task22" style="margin-left: 0px" id="task22">
+                <span>Доработка верстки</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 20</span>
+            </td>
+            <td>
+              <span>Nov 24</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[10], Быконя Денис, Северин Вервальд[20], Таракчан Левон[20], Смирнов Максим[20]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>23</span>
+            </td>
+            <td>
+              <a name="task23" style="margin-left: 0px" id="task23">
+                <span>Создание основных моделей</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 6</span>
+            </td>
+            <td>
+              <span>Oct 19</span>
+            </td>
+            <td>
+              <span>41d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>24</span>
+            </td>
+            <td>
+              <a name="task24" style="margin-left: 0px" id="task24">
+                <span>Главная страница и страница поиска</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 20</span>
+            </td>
+            <td>
+              <span>Oct 26</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>25</span>
+            </td>
+            <td>
+              <a name="task25" style="margin-left: 0px" id="task25">
+                <span>Панель администратора</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 20</span>
+            </td>
+            <td>
+              <span>Oct 25</span>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[80], Таракчан Левон</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>26</span>
+            </td>
+            <td>
+              <a name="task26" style="margin-left: 0px" id="task26">
+                <span>Пользователи</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 20</span>
+            </td>
+            <td>
+              <span>Oct 26</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>27</span>
+            </td>
+            <td>
+              <a name="task27" style="margin-left: 0px" id="task27">
+                <span>Страницы профиля</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 27</span>
+            </td>
+            <td>
+              <span>Oct 31</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис[40], Таракчан Левон</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>28</span>
+            </td>
+            <td>
+              <a name="task28" style="margin-left: 0px" id="task28">
+                <span>Страницы вечеринок</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 27</span>
+            </td>
+            <td>
+              <span>Nov 2</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>29</span>
+            </td>
+            <td>
+              <a name="task29" style="margin-left: 0px" id="task29">
+                <span>Интерактивная карта</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 3</span>
+            </td>
+            <td>
+              <span>Nov 9</span>
+            </td>
+            <td>
+              <span>20d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>30</span>
+            </td>
+            <td>
+              <a name="task30" style="margin-left: 0px" id="task30">
+                <span>Аватарки</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 12</span>
+            </td>
+            <td>
+              <span>Dec 11</span>
+            </td>
+            <td>
+              <span>89d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Минаков Александр</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>31</span>
+            </td>
+            <td>
+              <a name="task31" style="margin-left: 0px" id="task31">
+                <span>Многофункциональный редактор</span>
+              </a>
+            </td>
+            <td>
+              <span>Oct 31</span>
+            </td>
+            <td>
+              <span>Dec 9</span>
+            </td>
+            <td>
+              <span>119d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>32</span>
+            </td>
+            <td>
+              <a name="task32" style="margin-left: 0px" id="task32">
+                <span>Редиректы</span>
+              </a>
+            </td>
+            <td>
+              <span>Nov 24</span>
+            </td>
+            <td>
+              <span>Dec 3</span>
+            </td>
+            <td>
+              <span>29d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Таракчан Левон</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>33</span>
+            </td>
+            <td>
+              <a name="task33" style="margin-left: 0px" id="task33">
+                <span>Исправление багов</span>
+              </a>
+            </td>
+            <td>
+              <span>Dec 4</span>
+            </td>
+            <td>
+              <span>Dec 11</span>
+            </td>
+            <td>
+              <span>44d 7h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>Бодунков Денис, Таракчан Левон</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="resourcelist">
+      <h2>
+        <a name="resources" id="resources">Ресурсы</a>
+      </h2>
+      <div class="resourcelist-table">
+        <table cellspacing="0" cellpadding="0" border="1" width="100%">
+          <tr class="header" align="left">
+            <th>
+              <span>Название</span>
+            </th>
+            <th>
+              <span>Короткое название</span>
+            </th>
+            <th>
+              <span>Тип</span>
+            </th>
+            <th>
+              <span>Группа</span>
+            </th>
+            <th>
+              <span>Электронная почта</span>
+            </th>
+            <th>
+              <span>Стоимость</span>
+            </th>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-1" id="res-1">
+                <span>Бодунков Денис</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-2" id="res-2">
+                <span>Быконя Денис</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-4" id="res-4">
+                <span>Македонская Евгения</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-7" id="res-7">
+                <span>Минаков Александр</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-5" id="res-5">
+                <span>Петровская Анастасия</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-3" id="res-3">
+                <span>Северин Вервальд</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-8" id="res-8">
+                <span>Сиволоб Иван</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-10" id="res-10">
+                <span>Смирнов Максим</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-6" id="res-6">
+                <span>Таракчан Левон</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-9" id="res-9">
+                <span>Урташев Арслан</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-11" id="res-11">
+                <span>Чекалин Дмитрий</span>
+              </a>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span>Работа</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Этот файл был создан 
+      <a href="http://live.gnome.org/Planner/" style="text-decoration: underline;">Planner</a></div>
+    </div>
+  </body>
+</html>
