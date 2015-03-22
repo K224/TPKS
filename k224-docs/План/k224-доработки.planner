@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<project name="" company="" manager="" phase="" project-start="20150216T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="&#x420;&#x430;&#x431;&#x43E;&#x447;&#x438;&#x439;" description="&#x420;&#x430;&#x431;&#x43E;&#x447;&#x438;&#x439; &#x434;&#x435;&#x43D;&#x44C; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;"/>
+      <day-type id="1" name="&#x41D;&#x435;&#x440;&#x430;&#x431;&#x43E;&#x447;&#x438;&#x439;" description="&#x41D;&#x435;&#x440;&#x430;&#x431;&#x43E;&#x447;&#x438;&#x439; &#x434;&#x435;&#x43D;&#x44C; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;"/>
+      <day-type id="2" name="&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x439;" description="&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x434;&#x435;&#x43D;&#x44C; &#x438;&#x437; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x433;&#x43E; &#x43A;&#x430;&#x43B;&#x435;&#x43D;&#x434;&#x430;&#x440;&#x44F;"/>
+    </day-types>
+    <calendar id="1" name="&#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="&#x410;&#x43D;&#x430;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x430; &#x43F;&#x43E; &#x437;&#x430;&#x434;&#x430;&#x447;&#x430;&#x43C;" note="" work="288000" start="20150216T000000Z" end="20150227T170000Z" work-start="20150216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="2" name="&#x412;&#x430;&#x43B;&#x438;&#x434;&#x430;&#x446;&#x438;&#x44F; email" note="" work="28800" start="20150216T000000Z" end="20150216T170000Z" work-start="20150216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="3" name="&#x41A;&#x43D;&#x43E;&#x43F;&#x43A;&#x430; &quot;&#x441;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; &#x43C;&#x435;&#x440;&#x43E;&#x43F;&#x440;&#x438;&#x44F;&#x442;&#x438;&#x435;&quot; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430;" note="" work="28800" start="20150217T000000Z" end="20150217T170000Z" work-start="20150217T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150217T000000Z"/>
+    </task>
+    <task id="4" name="&#x41E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x444;&#x438;&#x43B;&#x44F;" note="" work="28800" start="20150218T000000Z" end="20150218T170000Z" work-start="20150218T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150218T000000Z"/>
+    </task>
+    <task id="5" name="&#x41E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43F;&#x43E;&#x43B;&#x44F; &#x43C;&#x435;&#x440;&#x43E;&#x43F;&#x440;&#x438;&#x44F;&#x442;&#x438;&#x44F;" note="" work="28800" start="20150219T000000Z" end="20150219T170000Z" work-start="20150219T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150219T000000Z"/>
+    </task>
+    <task id="6" name="&#x424;&#x438;&#x43A;&#x441; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43F;&#x43E; &#x430;&#x434;&#x440;&#x435;&#x441;&#x443;" note="" work="28800" start="20150220T000000Z" end="20150220T170000Z" work-start="20150220T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150220T000000Z"/>
+    </task>
+    <task id="7" name="&#x41F;&#x43E;&#x440;&#x44F;&#x434;&#x43E;&#x43A; &#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x440;&#x438;&#x435;&#x432;" note="" work="28800" start="20150221T000000Z" end="20150223T170000Z" work-start="20150223T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150221T000000Z"/>
+    </task>
+    <task id="8" name="&#x41F;&#x435;&#x440;&#x435;&#x43D;&#x43E;&#x441; &#x43A;&#x43D;&#x43E;&#x43F;&#x43A;&#x438; &#x443;&#x447;&#x430;&#x432;&#x441;&#x442;&#x432;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x43F;&#x43E;&#x434; &#x430;&#x432;&#x430;&#x442;&#x430;&#x440;" note="" work="28800" start="20150224T000000Z" end="20150224T170000Z" work-start="20150224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150224T000000Z"/>
+    </task>
+    <task id="9" name="&#x412;&#x435;&#x440;&#x441;&#x442;&#x43A;&#x430; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430;" note="" work="28800" start="20150225T000000Z" end="20150225T170000Z" work-start="20150225T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150225T000000Z"/>
+    </task>
+    <task id="10" name="&#x412;&#x435;&#x440;&#x441;&#x442;&#x43A;&#x430; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x43C;&#x435;&#x440;&#x43E;&#x43F;&#x440;&#x438;&#x44F;&#x442;&#x438;&#x44F;" note="" work="28800" start="20150226T000000Z" end="20150226T170000Z" work-start="20150226T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150226T000000Z"/>
+    </task>
+    <task id="11" name="&#x412;&#x435;&#x440;&#x441;&#x442;&#x43A;&#x430; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x440;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43C;&#x435;&#x440;&#x43E;&#x43F;&#x440;&#x438;&#x44F;&#x442;&#x438;&#x44F;" note="" work="28800" start="20150227T000000Z" end="20150227T170000Z" work-start="20150227T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150227T000000Z"/>
+    </task>
+    <task id="12" name="&#x412;&#x435;&#x440;&#x441;&#x442;&#x43A;&#x430; &#x43A;&#x43D;&#x43E;&#x43F;&#x43A;&#x438; &quot;&#x438;&#x441;&#x43A;&#x430;&#x442;&#x44C;&quot; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x43F;&#x43E;&#x438;&#x441;&#x43A;&#x430;" note="" work="28800" start="20150227T000000Z" end="20150227T170000Z" work-start="20150227T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150227T000000Z"/>
+    </task>
+    <task id="13" name="&#x424;&#x438;&#x43A;&#x441; &#x43E;&#x442;&#x43E;&#x431;&#x440;&#x430;&#x436;&#x435;&#x43D;&#x438;&#x44F; &#x430;&#x432;&#x430;&#x442;&#x430;&#x440;&#x43A;&#x438;&#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x43F;&#x440;&#x43E;&#x444;&#x438;&#x43B;&#x44F; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x441;&#x435;&#x449;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x43C;&#x435;&#x440;&#x43E;&#x43F;&#x440;&#x438;&#x44F;&#x442;&#x438;&#x439;" note="" work="28800" start="20150223T000000Z" end="20150223T170000Z" work-start="20150223T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150223T000000Z"/>
+    </task>
+    <task id="14" name="&#x41A;&#x43B;&#x438;&#x43A;&#x430;&#x431;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x432;&#x441;&#x435;&#x445; &#x430;&#x432;&#x430;&#x442;&#x430;&#x440;&#x43E;&#x43A; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;" note="" work="28800" start="20150224T000000Z" end="20150224T170000Z" work-start="20150224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150224T000000Z"/>
+    </task>
+    <task id="15" name="&#x41A;&#x43B;&#x438;&#x43A;&#x430;&#x431;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x432;&#x441;&#x435;&#x445; &#x430;&#x432;&#x430;&#x442;&#x430;&#x440;&#x43E;&#x43A; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435;  &#x43C;&#x435;&#x440;&#x43E;&#x43F;&#x440;&#x438;&#x44F;&#x442;&#x438;&#x44F;" note="" work="28800" start="20150225T000000Z" end="20150225T170000Z" work-start="20150225T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150225T000000Z"/>
+    </task>
+    <task id="16" name="&#x41F;&#x43E;&#x438;&#x441;&#x43A;&#x430;" note="" work="28800" start="20150226T000000Z" end="20150226T170000Z" work-start="20150226T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150226T000000Z"/>
+    </task>
+    <task id="17" name="&#x41F;&#x43E;&#x43B;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x43F;&#x438;&#x441;&#x43A;&#x430; &#x433;&#x43E;&#x441;&#x442;&#x435;&#x439;" note="" work="28800" start="20150227T000000Z" end="20150227T170000Z" work-start="20150227T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150227T000000Z"/>
+    </task>
+    <task id="18" name="&#x420;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x446;&#x438;&#x438; &#x43F;&#x43E; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x43D;&#x44B;&#x43C; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x435;&#x43D;&#x438;&#x44F;&#x43C;" note="" work="144000" start="20150224T000000Z" end="20150302T170000Z" work-start="20150224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150224T000000Z"/>
+    </task>
+    <task id="19" name="&#x422;&#x435;&#x441;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;" note="" work="144000" start="20150227T000000Z" end="20150305T170000Z" work-start="20150227T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150227T000000Z"/>
+    </task>
+    <task id="20" name="&#x41F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x43D;&#x44B;&#x439; &#x43F;&#x43B;&#x430;&#x43D;" note="" work="144000" start="20150223T000000Z" end="20150227T170000Z" work-start="20150223T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20150223T000000Z"/>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources>
+    <resource id="1" name="&#x41C;&#x438;&#x43D;&#x430;&#x43A;&#x43E;&#x432; &#x410;&#x43B;&#x435;&#x43A;&#x441;&#x430;&#x43D;&#x434;&#x440;" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource id="2" name="&#x422;&#x430;&#x440;&#x430;&#x43A;&#x447;&#x44F;&#x43D; &#x41B;&#x435;&#x432;&#x43E;&#x43D;" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource id="3" name="&#x41C;&#x430;&#x43A;&#x435;&#x434;&#x43E;&#x43D;&#x441;&#x43A;&#x430;&#x44F; &#x415;&#x432;&#x433;&#x435;&#x43D;&#x438;&#x44F;" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource id="4" name="&#x41F;&#x435;&#x442;&#x440;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F; &#x410;&#x43D;&#x430;&#x441;&#x442;&#x430;&#x441;&#x438;&#x44F;" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource id="5" name="&#x421;&#x43C;&#x438;&#x440;&#x43D;&#x43E;&#x432; &#x41C;&#x430;&#x43A;&#x441;&#x438;&#x43C;" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+    <resource id="6" name="&#x411;&#x43E;&#x434;&#x443;&#x43D;&#x43A;&#x43E;&#x432; &#x414;&#x435;&#x43D;&#x438;&#x441;" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+  </resources>
+  <allocations>
+    <allocation task-id="17" resource-id="1" units="100"/>
+    <allocation task-id="16" resource-id="1" units="100"/>
+    <allocation task-id="15" resource-id="1" units="100"/>
+    <allocation task-id="14" resource-id="1" units="100"/>
+    <allocation task-id="13" resource-id="1" units="100"/>
+    <allocation task-id="12" resource-id="2" units="100"/>
+    <allocation task-id="11" resource-id="2" units="100"/>
+    <allocation task-id="10" resource-id="2" units="100"/>
+    <allocation task-id="9" resource-id="2" units="100"/>
+    <allocation task-id="8" resource-id="2" units="100"/>
+    <allocation task-id="7" resource-id="2" units="100"/>
+    <allocation task-id="6" resource-id="2" units="100"/>
+    <allocation task-id="5" resource-id="2" units="100"/>
+    <allocation task-id="4" resource-id="2" units="100"/>
+    <allocation task-id="3" resource-id="2" units="100"/>
+    <allocation task-id="2" resource-id="2" units="100"/>
+    <allocation task-id="18" resource-id="3" units="100"/>
+    <allocation task-id="19" resource-id="4" units="100"/>
+    <allocation task-id="1" resource-id="5" units="100"/>
+    <allocation task-id="20" resource-id="6" units="100"/>
+  </allocations>
+</project>
